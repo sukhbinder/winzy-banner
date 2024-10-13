@@ -23,6 +23,13 @@ def display_banner(text):
     banner_label = tk.Label(window, text=text, font=("Helvetica", font_size))
     banner_label.pack(expand=True, fill="both")
 
+    # Define function to close the window
+    def close_window(event=None):
+        window.destroy()
+
+    # Bind the Escape key to close the window
+    window.bind("<Escape>", close_window)
+
     window.mainloop()
 
 # An example plugin implementation.
