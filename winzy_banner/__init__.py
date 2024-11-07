@@ -3,8 +3,12 @@ import sys
 
 import tkinter as tk
 
+
 def display_banner(text):
     window = tk.Tk()
+
+    # Window Title
+    window.title(" ")
 
     # Get screen width and height
     screen_width = window.winfo_screenwidth()
@@ -32,7 +36,9 @@ def display_banner(text):
 
     window.mainloop()
 
+
 # An example plugin implementation.
+
 
 class HelloWorld:
     __name__ = "banner"
@@ -40,9 +46,11 @@ class HelloWorld:
     @winzy.hookimpl
     def register_commands(self, subparser):
         parser = subparser.add_parser("banner", description="Display Banner text")
-        parser.add_argument('text', nargs="*", help='The text to be displayed in the banner')
+        parser.add_argument(
+            "text", nargs="*", help="The text to be displayed in the banner"
+        )
         parser.set_defaults(func=self.hello)
-    
+
     def hello(self, args):
         # this routine will be called when "winzy "banner is called."
         if args.text:
@@ -50,5 +58,6 @@ class HelloWorld:
         else:
             text = sys.stdin.read()
             display_banner(" ".join(text))
+
 
 banner_plugin = HelloWorld()

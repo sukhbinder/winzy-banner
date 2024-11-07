@@ -1,4 +1,3 @@
-
 import winzy_banner as w
 from unittest import mock
 import tkinter as tk
@@ -25,7 +24,9 @@ def test_display_banner(mock_label, mock_tk):
 
     # Assert that the label was created with the correct text and font size
     font_size = min(window_width // len("Hello World"), window_height)
-    mock_label.assert_called_once_with(mock_window, text="Hello World", font=("Helvetica", font_size))
+    mock_label.assert_called_once_with(
+        mock_window, text="Hello World", font=("Helvetica", font_size)
+    )
 
     # Assert that the label was packed with expand and fill options
     mock_label.return_value.pack.assert_called_once_with(expand=True, fill="both")

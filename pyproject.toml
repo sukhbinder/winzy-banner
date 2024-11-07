@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "winzy-banner"
-version = "0.1.2"
+version = "0.1.3"
 description = "Display Banner text"
 readme = "README.md"
 authors = [{name = "Sukhbinder Singh"}]

@@ -17,7 +17,15 @@ pip install winzy-banner
 ```
 ## Usage
 
-Usage instructions go here.
+Type this
+
+```bash
+winzy banner Display Your Text Here
+```
+
+It will display
+
+![winzy banner](banner.png)
 
 ## Development
 
