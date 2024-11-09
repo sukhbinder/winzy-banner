@@ -6,12 +6,13 @@ import tkinter as tk
 import customtkinter as ctk
 import tkinter as tk
 
+
 def display_banner(text):
     # Initialize the main window
     window = ctk.CTk()
     window.overrideredirect(True)  # Remove window borders for a cleaner look
-    window.attributes('-topmost', True)  # Keep the banner on top
-    window.attributes('-alpha', 0)  # Start with full transparency for fade-in effect
+    window.attributes("-topmost", True)  # Keep the banner on top
+    window.attributes("-alpha", 0)  # Start with full transparency for fade-in effect
 
     # Focus the window to capture key events
     window.focus_force()
@@ -19,7 +20,7 @@ def display_banner(text):
     # Set window title and appearance mode
     window.title(" ")
     ctk.set_appearance_mode("dark")  # Options: "dark", "light", "system"
-    
+
     # Get screen width and height
     screen_width = window.winfo_screenwidth()
     screen_height = window.winfo_screenheight()
@@ -38,10 +39,7 @@ def display_banner(text):
 
     # Create a label with the banner text
     banner_label = ctk.CTkLabel(
-        frame,
-        text=text,
-        font=("Helvetica", font_size, "bold"),
-        text_color="white"
+        frame, text=text, font=("Helvetica", font_size, "bold"), text_color="white"
     )
     banner_label.pack(expand=True, fill="both", padx=20, pady=20)
 
@@ -60,10 +58,10 @@ def display_banner(text):
 
     # Function for smooth fade-in animation
     def fade_in():
-        alpha = window.attributes('-alpha')
+        alpha = window.attributes("-alpha")
         if alpha < 1:
             alpha += 0.05
-            window.attributes('-alpha', alpha)
+            window.attributes("-alpha", alpha)
             window.after(20, fade_in)
 
     # Define function to close the window on Escape key
@@ -81,7 +79,6 @@ def display_banner(text):
 
     # Run the application loop
     window.mainloop()
-
 
 
 # An example plugin implementation.
