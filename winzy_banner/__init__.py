@@ -101,7 +101,7 @@ class HelloWorld:
             display_banner(" ".join(args.text))
         else:
             text = sys.stdin.read()
-            display_banner(" ".join(text))
+            display_banner(" ".join(text.strip())
 
 
 banner_plugin = HelloWorld()
