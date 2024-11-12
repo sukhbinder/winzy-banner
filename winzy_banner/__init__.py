@@ -14,9 +14,6 @@ def display_banner(text):
     window.attributes("-topmost", True)  # Keep the banner on top
     window.attributes("-alpha", 0)  # Start with full transparency for fade-in effect
 
-    # Focus the window to capture key events
-    window.focus_force()
-
     # Set window title and appearance mode
     window.title(" ")
     ctk.set_appearance_mode("dark")  # Options: "dark", "light", "system"
@@ -77,6 +74,9 @@ def display_banner(text):
     # Enable dynamic resizing
     window.resizable(True, True)
 
+    # Focus the window to capture key events
+    window.focus_force()
+
     # Run the application loop
     window.mainloop()
 
@@ -101,7 +101,7 @@ class HelloWorld:
             display_banner(" ".join(args.text))
         else:
             text = sys.stdin.read()
-            display_banner(" ".join(text.strip())
+            display_banner(" ".join(text.strip()))
 
 
 banner_plugin = HelloWorld()
